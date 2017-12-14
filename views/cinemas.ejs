@@ -1,0 +1,58 @@
+<h3 class="prompt"> choose your theatre </h3>
+
+<% for(let i=0; i < theatres.length && i < 9; i++) { %>
+
+    <% let theatre = theatres[i] %>
+
+        <div id="cinemaRow" class="row">
+            <div class="col s3 offset-s1">
+                <span class="theatreID">
+                    <%= theatre.name %>
+                </span>
+            </div>
+            <div class="col s6">
+                <span class="theatreName">
+                    <%= theatre.location.address.display_text %>
+                </span>
+            </div>
+            <div class="col s1">
+                <a id="<%= theatre.id %>" theatre_id="<%= theatre.id %>" class="chooseTheatre btn-floating btn-medium waves-effect waves-light red">
+                    <i class="material-icons right">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <% } %>
+
+
+            <ul class="pagination">
+                <li class="disabled">
+                    <a href="#!">
+                        <i class="material-icons">chevron_left</i>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#!">1</a>
+                </li>
+                <li class="waves-effect">
+                    <a href="#!">2</a>
+                </li>
+                <li class="waves-effect">
+                    <a href="#!">3</a>
+                </li>
+                <li class="waves-effect">
+                    <a href="#!">4</a>
+                </li>
+                <li class="waves-effect">
+                    <a href="#!">5</a>
+                </li>
+                <li class="waves-effect">
+                    <a href="#!">
+                        <i class="material-icons">chevron_right</i>
+                    </a>
+                </li>
+            </ul>
+
+
+            <script>
+                $(".chooseTheatre").click(theatreHandler);
+            </script>

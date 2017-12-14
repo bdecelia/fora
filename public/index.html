@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title> Movie API Demo</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+
+	<div id="splash" class="container">
+		<div id="mainRow" class="row">
+			<div class="col s6 offset-s3">
+				<div id="brand">
+					<h1> forā </h1>
+				</div>
+				<form id="splashForm" action="#">
+					<div id="inputBox" class="row">
+						<div class="input-field col s6">
+							<input id="user_name" type="text" class="validate">
+							<label for="user_name">Username</label>
+						</div>
+						<div class="input-field col s6">
+							<input id="zip_code" type="text" class="validate">
+							<label for="zip_code">Zip Code</label>
+						</div>
+					</div>
+					<button class="btn waves-effect waves-light" type="submit" name="action">Let's go!</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div id="cinemas" class="container" style="display:none;"></div>
+	<div id="movies" class="container" style="display:none;"></div>
+	<div id="showtimes" class="container" style="display:none;"></div>
+	<div id="main" class="container" style="display:none;"></div>
+
+	<script src="/js/client.js"></script>
+</body>
+
+</html>

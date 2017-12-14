@@ -1,0 +1,73 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(52, 133, 133);
+}
+
+th {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+.showtime_start{
+    font-size: 2rem;
+}
+
+#chatTable {
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.069);
+    margin-top: 3%;
+    margin: 2%;
+    width: 96%;
+    padding: 30px;
+}
+
+#chatForm {
+    margin-right:  2%;
+    width:  96%;
+    margin-left:  2%;
+    padding: 15px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.019);
+    margin-top: 15px;
+}
+
+#message {
+    text-align: right;
+}
+
+#chatBox {
+    max-height: 475px;
+    overflow-y: auto;
+}
+
+#cinemaRow {
+    padding: 2%;
+    margin: 0%;
+    border-bottom: dotted 1px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    border-radius: 35px;
+    margin-top: 5%;
+    padding: 15px;
+    background-color: white;
+}
+
+#brand {
+    margin-bottom: 15%;
+    margin-left: -1%;
+}
+
+#prompt {
+    margin-bottom: 25px;
+}

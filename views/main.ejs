@@ -1,0 +1,89 @@
+<h3> alright
+    <%= user %>, enjoy the movie! </h3>
+<br/>
+
+<div id="reactionBox" class="row">
+    <div class="col s3">
+            Wow: <span id="wowCount"></span>
+    </div>
+    <div class="col s3">
+            Hate it: <span id="frownCount"></span>
+    </div>
+    <div class="col s3">
+            Meh: <span id="mehCount"></span>
+    </div>
+    <div class="col s3">
+            Love it: <span id="smileCount"></span>
+    </div>
+
+</div>
+
+<div id="chatBox">
+    <table id="chatTable">
+        <thead>
+            <tr>
+                <th> forüm </th>
+            </tr>
+        </thead>
+        <tbody id="chat">
+            <tr>
+                <td>
+                    <b>Admin:</b> Welcome to the chatroom! </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="chatForm" action="#">
+        <input id="message" type="text" placeholder="Enter Your Message">
+    </form>
+</div>
+
+<div class="fixed-action-btn toolbar">
+    <a class="btn-floating btn-large blue">
+        <i class="large material-icons">tag_faces</i>
+    </a>
+    <ul>
+        <li class="waves-effect waves-light">
+            <a class="react" id="wow" href="#">
+                <i class="material-icons">priority_high</i>
+            </a>
+        </li>
+        <li class="waves-effect waves-light">
+            <a class="react" id="frown" href="#">
+                <i class="material-icons"> sentiment_very_dissatisfied</i>
+            </a>
+        </li>
+        <li class="waves-effect waves-light">
+            <a class="react" id="meh" href="#">
+                <i class="material-icons">sentiment_neutral</i>
+            </a>
+        </li>
+        <li class="waves-effect waves-light">
+            <a class="react" id="smile" href="#">
+                <i class="material-icons">sentiment_very_satisfied</i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+<script src="./js/clientSocket.js"></script>
+<script>
+    function chatHandler(event) {
+        message = $("#message").val();
+        console.log(message);
+        $("#message").val("");
+        event.preventDefault();
+    }
+
+    function reactHandler(){
+        react = this.id;
+        socket.emit("react", { react: react });
+        event.preventDefault();
+    }
+
+    $("#chatForm").submit(chatHandler);
+    $(".react").click(reactHandler);
+
+
+</script>

@@ -1,0 +1,50 @@
+<h3 class="prompt"> choose your movie </h3>
+
+<% for(let i=0; i < (movies.length-(movies.length%3))/3 ; i+=3) { %>
+    <% let movieRow = movies.slice(i, i+3) %>
+    <div id="<%= 'movieRow_ ' + i %>" class="row">
+    <div class="col s2"></div>
+    <% for(let j=0; j < movieRow.length ; j++) { %>
+        <% let movie = movieRow[j] %>
+        <div class="col s3">
+            <img id="<%=movie.id%>" class="poster" src="<%= movie.poster_image_thumbnail %>">
+            <br/>
+            <%= movie.title %>
+        </div>
+    <% } %>
+    </div>
+<% } %>
+
+
+<ul class="pagination">
+    <li class="disabled">
+        <a href="#!">
+            <i class="material-icons">chevron_left</i>
+        </a>
+    </li>
+    <li class="active">
+        <a href="#!">1</a>
+    </li>
+    <li class="waves-effect">
+        <a href="#!">2</a>
+    </li>
+    <li class="waves-effect">
+        <a href="#!">3</a>
+    </li>
+    <li class="waves-effect">
+        <a href="#!">4</a>
+    </li>
+    <li class="waves-effect">
+        <a href="#!">5</a>
+    </li>
+    <li class="waves-effect">
+        <a href="#!">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </li>
+</ul>
+
+
+<script>
+    $(".poster").click(movieHandler);
+</script>

@@ -1,0 +1,43 @@
+<h3 class="prompt"> choose your showtime </h3>
+
+<% for(let i=0; i < showtimes.length && i < 9; i++) { %>
+
+    <% let showtime = showtimes[i] %>
+
+        <div id="showtimeRow" class="row">
+            <div class="col s6 offset-s2">
+                <span class="showtime_start">
+                    <% let start = new Date(showtime.start_at) %>
+                    <%= start.getMonth() + "/" + start.getDate() + " at " + start.getHours() + ":" + (start.getMinutes() == 0 ? "00": start.getMinutes()) %>
+                        <!-- CONVERT TO CLIENTS TIME ZONE -->
+                </span>
+            </div>
+
+            <div class="col s2">
+                <a id="<%= showtime.id %>" showtime_id="<%= showtime.id %>" class="chooseshowtime btn-floating btn-medium waves-effect waves-light red">
+                    <i class="material-icons right">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <% } %>
+
+<ul class="pagination">
+    <li class="disabled">
+        <a href="#!">
+            <i class="material-icons">chevron_left</i>
+        </a>
+    </li>
+    <li class="active">
+        <a href="#!">1</a>
+    </li>
+    <li class="disabled">
+        <a href="#!">
+            <i class="material-icons">chevron_right</i>
+        </a>
+    </li>
+</ul>
+
+
+<script>
+    $(".chooseshowtime").click(showtimeHandler);
+</script>
